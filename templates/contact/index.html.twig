@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+    <div class="container d-flex align-items-center justify-content-center mt-5 p-5">
+        <div>
+            <h2 class="text-center">Laissez-nous un message</h2>
+            <div class="mx-auto">
+                {{ form(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

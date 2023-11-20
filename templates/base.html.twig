@@ -1,16 +1,90 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>{% block title %}Garage Vincent PARROT{% endblock %}</title>
 
-        {% block javascripts %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    <!-- Bootstrap core CSS -->
+    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+
+
+    <!-- Custom styles for this template -->
+    <link href="{{ asset('assets/css/carousel.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-... (integrity hash) ..." crossorigin="anonymous" />
+
+</head>
+<body style="background-color: #212529" class="text-white">
+<header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="{{ path('home')}}"><img src="{{ asset('assets/images/logo.png') }}" alt="logo" height="120px"> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ path('nous')}}"> Qui sommes nous <span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{path('services')}}"> Nos Services <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{path('voitures')}}"> Nos vehicules <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{path('avis')}}"> Votre avis <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{path('contact')}}"> Contact <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+            {% if app.user %}
+                <a href="{{ path('account') }}"><button type="button" class="btn btn-outline-danger m-2">Mon espace Pro</button></a>   <a href="{{ path('app_logout') }}"><button type="button" class="btn btn-outline-danger m-2">Deconnexion</button></a>
+            {% else %}
+                <a href="{{ path('app_login') }}"><button type="button" class="btn btn-outline-danger m-2">Espace Professionel</button></a>
+            {% endif%}
+        </div>
+    </nav>
+</header>
+
+
+{% block content  %}
+{% endblock %}
+
+
+<!-- FOOTER -->
+<footer class="container ">
+    <div class="row">
+        <div class="col-md-4 d-flex align-items-center text-center">
+            <p> Garage Vincent PARROT<br>
+                125 rue général LECLERC<br>
+                31000 TOULOUSE</p>
+        </div>
+        <div class="col-md-4 d-flex align-items-center text-center">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d4085.845575148416!2d1.4398658290484116!3d43.60385324061805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s%20125%20rue%20g%C3%A9n%C3%A9ral%20LECLERC%20%20%20%20%20%20%2031000%20TOULOUSE!5e0!3m2!1sfr!2sfr!4v1700488508068!5m2!1sfr!2sfr" width="350" height="275" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="col-md-4 d-flex align-items-center mx-auto">
+            <div class="mx-auto">
+                <div class="row ">
+                    <i class="fab fa-facebook-f mr-3"></i> <p>Garage Vincent Parrot</p>
+                </div>
+                <div class="row ">
+                    <i class="fab fa-instagram mr-3"></i> <p>@Vincent.parrot</p>
+                </div>
+                <div class="row ">
+                    <i class="fab fa-linkedin mr-3"></i> <p>Vincent Parrot</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+</main>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="{{ asset('assets/js/bootstrap.bundle.js') }}"></script>
+</body>
 </html>

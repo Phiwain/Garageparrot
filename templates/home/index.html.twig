@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <main role="main">
+
+        <div id="myCarousel" class="carousel slide h-80 " data-ride="carousel " >
+            <div class="carousel-inner my-4" >
+                <div class="carousel-item active" style="height: 85vh" >
+                    <div class="container" >
+                        <div class="carousel-caption text-left">
+                            <h1>Vincent PARROT, Garagiste</h1>
+                            <p>Pour l'entretien, la mécanique et la carrosserie à TOULOUSE</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="container container-fluid mx-auto">
+
+        <h3 class="text-center mb-4">Nos horaires d'ouvertures</h3>
+        {% include 'partial/footer.html.twig' with {'openings': openings} %}
+
+    </div>
+    <div class="container container-fluid mx-auto">
+
+        <h3 class="text-center mt-5">Vos avis</h3>
+        {% include 'partial/avis.html.twig' with {'avis': avis} %}
+
+    </div>
+{% endblock %}

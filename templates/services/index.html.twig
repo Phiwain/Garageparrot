@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Services{% endblock %}
+
+{% block content%}
+    <div class="container marketing">
+        <div class="featurette-divider mt-5">
+    {% for service in Services %}
+
+        <div class="row featurette">
+            <div class="col-md-7 my-auto">
+                <h2 class="featurette-heading mb-4">{{ service.Name }}</h2>
+                <p class="lead">{{ service.Description }}</p>
+            </div>
+            <div class="col-md-5">
+                <img src="/uploads/images/Services/{{ service.Illustration }}" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="300" height="300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" >
+            </div>
+        </div>
+        <hr class="featurette-divider">
+
+    {% endfor %}
+        </div>
+    </div>
+{% endblock %}

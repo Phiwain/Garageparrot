@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Qui sommes nous?{% endblock %}
+
+{% block content%}
+
+    <div class="container marketing pt-5 mt-5" >
+    <div class="row text-white mb-5" >
+        <div class="col-lg-10 mx-auto text-center">
+            <h2 class="mb-4">Le garage Vincent PARROT</h2>
+            <p>Découvrez le Garage Vincent Parrot, un pilier de l'industrie automobile à Toulouse avec une riche expérience de 15 ans. Spécialistes de la réparation et de la vente, nous nous engageons envers l'excellence et la satisfaction client. Notre équipe dévouée, formée et passionnée, garantit des services de pointe, allant de la maintenance à la vente de véhicules de qualité. Forts de notre réputation établie, nous privilégions la transparence, l'efficacité, et la relation de confiance avec nos clients. Confiez-nous votre voiture en toute tranquillité, car chez Garage Vincent Parrot, l'excellence automobile est notre métier et notre passion.</p>
+        </div>
+    </div>
+
+    <div class="row text-white">
+        <div class="col-lg-4 mx-auto">
+            <img src="{{ asset ('uploads/images/Team/v.parrot.jpg') }}" class="bd-placeholder-img rounded-circle" width="240" height="240"  style="object-fit: cover"  focusable="false">
+            <h2>Vincent PARROT</h2>
+            <p>Leader du Garage éponyme, il incarne 15 années d'expertise automobile à Toulouse. Visionnaire, il guide son équipe avec passion et détermination, mettant l'accent sur l'excellence, la transparence, et la satisfaction client.</p>
+        </div>
+
+    </div><!-- /.row -->
+    <div class="row text-white">
+        <div class="col-lg-4">
+            <img src="{{ asset ('uploads/images/Team/g.voiriot.jpg') }}" class="bd-placeholder-img rounded-circle" width="200" height="200"  style="object-fit: cover"  focusable="false">
+            <h2>Gerard VOIRIOT</h2>
+            <p>Chef mécanicien</p>
+            <p>Il allie expertise et passion pour assurer des réparations automobiles de qualité supérieure, renforçant ainsi notre réputation d'excellence inégalée.</p>
+        </div>
+        <div class="col-lg-4">
+            <img src="{{ asset ('uploads/images/Team/f.herel.jpg') }}" class="bd-placeholder-img rounded-circle" width="200" height="200"  style="object-fit: cover"  focusable="false">
+            <h2>Fabien HEREL</h2>
+            <p>Chef carrosserie</p>
+            <p>Il marie talent et dévouement pour des réparations carrosserie exceptionnelles. Sa maîtrise technique et sa passion sculptent la perfection esthétique, surpassant les attentes.</p>
+        </div>
+        <div class="col-lg-4">
+            <img src="{{ asset ('uploads/images/Team/e.clement.jpg') }}" class="bd-placeholder-img rounded-circle" width="200" height="200"  style="object-fit: cover"  focusable="false">
+            <h2>Emilie CLEMENT</h2>
+            <p>Secretaire</p>
+            <p>Elle orchestre avec efficacité les rouages administratifs. Sa diligence, sa convivialité et son professionnalisme créent un environnement accueillant et bien organisé.</p>
+        </div>
+    </div><!-- /.row -->
+
+
+{% endblock %}

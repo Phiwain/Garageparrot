@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ voiture.name }} - Garage PARROT{% endblock %}
+
+{% block content %}
+    <div class="row mt-5 p-5 mx-auto">
+        <div class="col-md-6 d-flex align-items-center justify-content-center">
+            <img src="{{ asset('uploads/images/Cars/' ~ voiture.illustration) }}" style="height: 420px; width: 420" class="img-fluid" alt="{{ voiture.name }}">
+        </div>
+        <div class="col-md-6 mx-auto my-auto">
+            <h3>{{ voiture.name }}</h3>
+            <p>Carburant: {{ voiture.carburant }}</p>
+            <p>Année: {{ voiture.year }}</p>
+            <p>Kilométrage: {{ voiture.kilometrage }} km</p>
+            <p class="font-weight-bold">Prix: {{ voiture.price }} €</p>
+
+            {% if voiture.options is not empty %}
+                <p>Options :</p>
+                <ul>
+                    {% for option in voiture.options %}
+                        <li>{{ option }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>Aucune option disponible.</p>
+            {% endif %}
+
+            <hr>
+            <p> {{ voiture.description }}</p>
+            <hr>
+        </div>
+    </div>
+    <div class="container-fluid d-flex align-items-center p-5">
+        <div class="row p-5 mt-4 my-auto  ">
+            {% for i in range(1, 6) %}
+            {% set galery_variable = attribute(voiture, 'galery' ~ i) %}
+            {% if galery_variable is defined and galery_variable is not none and galery_variable is not empty %}
+                <div class="mx-auto" >
+                    <img class="m-2" src="/uploads/images/Cars/{{ galery_variable }}" alt="{{ voiture.name }}">
+                </div>
+            {% endif %}
+            {% if i % 2 == 0 %}
+        </div>
+        <div class="row p-5 mt-4 my-auto">
+            {% endif %}
+            {% if loop.last and i % 2 != 0 %}
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos Voitures - Garage PARROT{% endblock %}
+
+
+
+{% block content %}
+    <div class=" container-fluid mt-5 p-5">
+    <div class="row">
+        <div class="col-md-3">
+            {{ form_start(form) }}
+            <h4>Carburants</h4>
+            {{ form_row(form.carburants) }}
+            <h4>Prix</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    {{ form_row(form.prixMin) }}
+                </div>
+                <div class="col-md-6">
+                    {{ form_row(form.prixMax) }}
+                </div>
+            </div>
+            <h4>Kilometrage</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    {{ form_row(form.kmMin) }}
+                </div>
+                <div class="col-md-6">
+                    {{ form_row(form.kmMax) }}
+                </div>
+            </div>
+            <h4>Année</h4>
+            <div class="row">
+                <div class="col-md-6">
+                    {{ form_row(form.yearMin) }}
+                </div>
+                <div class="col-md-6">
+                    {{ form_row(form.yearMax) }}
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Filtrer</button>
+            {{ form_end(form) }}
+        </div>
+
+        <div class="col-md-9">
+            <h3>Nos voitures</h3>
+            <div class="row">
+                {% for voiture in voitures %}
+                    <div class="col-md-4">
+                        <div class="container text-center">
+                            <img src="/uploads/images/Cars/{{ voiture.illustration }}" class="img-fluid" alt="{{ voiture.name }}">
+                            <h5>{{ voiture.name }}</h5>
+                            <p>Carburant: {{ voiture.carburant }}</p>
+                            <p>Année: {{ voiture.year }}</p>
+                            <p>Km: {{ voiture.kilometrage }}</p>
+                            <p class="font-weight-bold"> {{ voiture.price }} €</p>
+                            <a href="{{ path('voiture',{'slug':voiture.slug}) }}">En Savoir plus</a>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

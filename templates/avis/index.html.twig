@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Avis{% endblock %}
+
+{% block content %}
+    <div class="container d-flex align-items-center justify-content-center mt-5 p-5">
+        <div>
+            <h2 class="text-center">Laissez-nous votre avis</h2>
+            <div class="mx-auto">
+                {{ form(form) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="container container-fluid mx-auto">
+        <h3 class="text-center">Vos avis</h3>
+        {% include 'partial/avis.html.twig' with {'avis': avis} %}
+    </div>
+{% endblock %}

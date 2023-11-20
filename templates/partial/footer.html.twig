@@ -1,0 +1,16 @@
+
+{% for opening in openings %}
+    <div class="row ">
+     <div class="col-md-12 text-center">
+         <p class="m-2">
+             {% if opening.Day is not null %}{{ opening.Day }} de {% endif %}
+             {% if opening.OpenMorning is not null %}{{ opening.OpenMorning }} h à {% endif %}
+             {% if opening.ClosedMorning is not null %}{{ opening.ClosedMorning }} h{% endif %}
+             {% if opening.OpenEvening is not null %} et de {{ opening.OpenEvening }} h à {% endif %}
+             {% if opening.ClosedEvening is not null %}{{ opening.ClosedEvening }} h{% endif %}
+         </p>
+     </div>
+    </div>
+{% endfor %}
+
+
