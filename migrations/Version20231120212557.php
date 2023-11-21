@@ -37,7 +37,7 @@ final class Version20231120212557 extends AbstractMigration
         $hashedPassword = password_hash('1234', PASSWORD_BCRYPT);
 
         // Insert a new Employee record with the hashed password
-        $this->addSql("INSERT INTO employee (email, roles, password, nom, prenom) VALUES ('seb@seb.fr', '[\"ROLE_ADMIN\"]', '$hashedPassword', 'Admin', 'User')");
+        $this->addSql("INSERT INTO employee (email, roles, password, nom, prenom) VALUES ('admin@admin.fr', '[\"ROLE_ADMIN\"]', '$hashedPassword', 'Admin', 'User')");
     }
 
     public function down(Schema $schema): void
