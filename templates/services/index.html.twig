@@ -3,10 +3,10 @@
 {% block title %}Nos Services{% endblock %}
 
 {% block content %}
-    <div class="container marketing">
+    <div class="container marketing p-5">
         <div class="featurette-divider mt-5">
             {% for service in Services %}
-                <div class="row featurette align-items-center">
+                <div class="row featurette align-items-center mt-5">
                     <div class="col-md-5 text-center">
                         <img src="/uploads/images/Services/{{ service.Illustration }}" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto my-auto" width="500" height="500" preserveAspectRatio="xMidYMid slice" focusable="false">
                     </div>
@@ -20,5 +20,3 @@
         </div>
     </div>
 {% endblock %}
-
-
