@@ -30,23 +30,27 @@
             <hr>
         </div>
     </div>
-    <div class="container-fluid d-flex align-items-center p-5">
-        <div class="row p-5 mt-4 my-auto  ">
+    <div class="container-fluid  p-5">
+        {% set count = 0 %}
+        <div class="row p-4 my-auto">
             {% for i in range(1, 6) %}
             {% set galery_variable = attribute(voiture, 'galery' ~ i) %}
             {% if galery_variable is defined and galery_variable is not none and galery_variable is not empty %}
-                <div class="mx-auto" >
-                    <img class="m-2" src="/uploads/images/Cars/{{ galery_variable }}" alt="{{ voiture.name }}">
+            {% if count % 2 == 0 %}
+                <div class="col-md-6 mx-auto">
+                    <img class="m-2 img-fluid w-75" src="/uploads/images/Cars/{{ galery_variable }}" alt="{{ voiture.name }}">
+                </div>
+            {% else %}
+                <div class="col-md-6 mx-auto">
+                    <img class="m-2 img-fluid w-75" src="/uploads/images/Cars/{{ galery_variable }}" alt="{{ voiture.name }}">
                 </div>
             {% endif %}
-            {% if i % 2 == 0 %}
-        </div>
-        <div class="row p-5 mt-4 my-auto">
+            {% set count = count + 1 %}
+            {% if count % 2 == 0 %}
+        </div><div class="row p-4  my-auto">
             {% endif %}
-            {% if loop.last and i % 2 != 0 %}
+            {% endif %}
+            {% endfor %}
         </div>
-        {% endif %}
-        {% endfor %}
-    </div>
     </div>
 {% endblock %}
